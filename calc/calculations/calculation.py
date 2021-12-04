@@ -1,7 +1,5 @@
 """Calculation Class"""
-
-class Calculation():
-
+class Calculation:
     """ calculation abstract base class"""
     # pylint: disable=too-few-public-methods
     def __init__(self,values: tuple):
@@ -12,7 +10,7 @@ class Calculation():
         """ factory method"""
         return cls(values)
     @staticmethod
-    def convert_args_to_tuple_of_float(values):
+    def convert_args_to_tuple_of_float(values: tuple):
         """ standardize values to list of floats"""
         #lists can be modified and tuple cannot, tuple are faster.
         #We need to convert the tuple of potentially random data types (its raw data)
