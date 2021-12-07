@@ -10,7 +10,6 @@ class CalculatorController(ControllerBase):
             error = 'You must enter a value for value 1 and or value 2'
         else:
             flash('You successfully calculated')
-            flash('You are awesome')
 
             # get the values out of the form
             value1 = request.form['value1']
@@ -23,12 +22,7 @@ class CalculatorController(ControllerBase):
             result = str(Calculator.get_last_result_value())
             return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
         return render_template('calculator2.html', error=error)
+
     @staticmethod
     def get():
         return render_template('calculator2.html')
-
-
-
-
-
-
