@@ -1,55 +1,48 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-{{ super() }}
-<style type="text/css">
-    .container-fluid {
-        height: 80vh;
-    }
-</style>
+    {{ super() }}
+    <style type="text/css">
+        .important {
+            color: #336699;
+        }
+    </style>
 {% endblock %}
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h1>Calculation Result</h1>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
+    <h1>Calculation Result</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
             {% for message in messages %}
-            <div class="alert alert-success" role="alert">
-                {{ message }}
-            </div>
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
             {% endfor %}
-            {% endif %}
-            {% endwith %}
+        {% endif %}
+    {% endwith %}
+    <strong>Value 1: </strong> {{ value1 }} <br>
+    <strong>Value 2: </strong> {{ value2 }} <br>
+    <strong>Operation: </strong> {{ operation }} <br>
+    <strong>Result: </strong> {{ result }}
 
-            <div class="container">
-                <h4 class="text-center">Calculation Result</h4>
-                <!--    search button-->
+    {% if data %}
+        <table>
+            {% for item in data %}
+                <!--- This will not work you have to think about it--->
+                <TR>
+                    <TD class="c1"><IMG src="favicon.ico"></TD>
+                    <TD class="c2">{{ item.date }}</TD>
+                    <TD class="c3">{{ item.id }}</TD>
+                    <TD class="c4"><SPAN>{{ item.position }}</SPAN></TD>
+                    <TD class="c5"><SPAN>{{ item.status }}</SPAN></TD>
+                </TR>
+            {% endfor %}
+        </table>
+        {% else %}
+	        <h1>There are no calculations</h1>
+    {% endif %}
 
 
-                <table class="table table-hover table-bordered  table-striped">
-                    <tr class="table-primary">
-                        <th>Value 1</th>
-                        <th>Value 2</th>
-                        <th>Operation</th>
-                        <th>Result</th>
-                    </tr>
-                    <tr class="table-info">
-                        <td>{{ value1 }}</td>
-                        <td>{{ value2 }}</td>
-                        <td>{{ operation }}</td>
-                        <td colspan="2">{{ result }}</td>
-                    </tr>
-                </table>
 
-            </div>
-            <!--            <strong>Value 1: </strong> {{ value1 }} <br>-->
-            <!--            <strong>Value 2: </strong> {{ value2 }} <br>-->
-            <!--            <strong>Operation: </strong> {{ operation }} <br>-->
-            <!--            <strong>Result: </strong> {{ result }}-->
-        </div>
-    </div>
-</div>
+
 
 {% endblock %}
