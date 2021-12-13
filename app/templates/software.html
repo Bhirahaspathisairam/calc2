@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/software.css') }}"/>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+    .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .para {
+        font-size: 50px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <br>
+    <h2 style="color: white">IBM / Microsoft</h2>
+    <br>
+    <div class="p-5 my-4 bg-dark text-white rounded-3 shadow-lg p-3 rounded ">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h5 class="mt-0">Major Internet Events</h5>
+                    <p>The first widely-publicized webcam was the XCoffee, also known as the Trojan Room coffee pot
+                        . The camera began operating in 1991 with the help of Quentin Stafford-Fraser and Paul
+                        Jardetzky.
+                        Creative Labs releases a multimedia upgrade kit that includes a CD-ROM drive, the SoundBlaster
+                        Pro sound card, a MIDI kit, and a variety of software applications.
+                        The kit allows IBM compatible users to obtain all tools needed to meet the MPC standards.</p>
+                </div>
+                <div class="col-lg-3">
+                    <img alt="xcoffee" class="mr-3 rounded shadow-lg" src="{{ url_for('static', filename='images/xcoffee.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 bg-dark text-white rounded-3 shadow-lg p-3 rounded ">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h5 class="mt-0">IBM</h5>
+                    <p>Gary kildall was selling many operating system which is running on this own operating system
+                        called cpm. Cpm only runs on mini computers but not on PC.
+                        But ibm wants an operating system immediately and they asked kildall to sign a non-disclosure
+                        argument and IBM will not tell Why kildall needs to sign that agreement and his spouse rejected
+                        to sign the non-disclosure agreement.
+                        IBM then planned to buy Application software from Microsoft and then they called Bill gates in
+                        order to buy the Operating System.
+                        Gary kildall wrote the operating system in his spare time when he was working in a electronics
+                        company. Bill Gates called the electronics company and he purchased the OS and he sold to IBM.
+                    </p>
+                </div>
+                <div class="col-lg-3">
+                    <img alt="gary" class="mr-3 rounded shadow-lg" src="{{ url_for('static', filename='images/gary.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 bg-dark text-white rounded-3 shadow-lg p-3 rounded ">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h5 class="mt-0">Microsoft</h5>
+                    <p>In earlier days 1955, people are more familiar with Internet or World Wide Web as ‘Netscape’.
+                        Microsoft business was analysing the Netscape and releasing the versions in the market, which
+                        led to greater share in the Industry.
+                        Microsoft released first Operating system product called ‘Xenix’ in 1980.
+                        MS Dos was the first Microsoft’s successful operating system written for IBM and In 1983,
+                        Microsoft’s Crowning achievement Microsoft Windows was released resulting stock rise
+                        billionaire.
+                        Microsoft Office and Internet explorer is one of the most successful releases, which is widely
+                        used even now in the industry
+                    </p>
+                </div>
+                <div class="col-lg-3">
+                    <img alt="msdos" class="mr-3 rounded shadow-lg" src="{{ url_for('static', filename='images/msdos.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

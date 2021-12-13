@@ -1,45 +1,71 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important {
-            color: #336699;
-        }
-    </style>
+{{ super() }}
+<style type="text/css">
+    .container-fluid {
+
+    }
+
+    .form-cls {
+        border-radius: 15px;
+        box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.38);
+    }
+
+
+</style>
 {% endblock %}
 {% block content %}
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">My Calculator</h1>
+            {% if error %}
+            <div class="alert alert-danger error" role="alert">
+                {{ error }}
+            </div>
+            {% endif %}
+            <div class="mb-4 d-flex justify-content-center align-items center ">
 
-    <h1>My Calculator</h1>
-     {% if error %}
-         <div class="alert alert-danger error" role="alert">
-             {{ error }}
+                <form action="/calculator" method="POST" class="border border-secondary p-5 form-cls bg-light">
+                    <div class="form-group">
+                        <label for="value1" class="col-sm-4 col-form-label">Value 1:</label>
+                        <input type="text" id="value1" name="value1" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="value2" class="col-sm-4 col-form-label">Value 2:</label>
+                        <input type="text" id="value2" name="value2" class="form-control">
+                    </div>
+                    <fieldset class="py-2">
+                        <legend>Operation</legend>
+                        <div>
+                            <input type="radio" name="operation" id="addition" value="addition" checked
+                                   class="form-check-input">
+                            <label for="addition" class="form-check-label">addition</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="operation" id="subtraction" value="subtraction"
+                                   class="form-check-input">
+                            <label class="form-check-label" for="subtraction">subtraction</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="operation" id="multiplication" value="multiplication"
+                                   class="form-check-input">
+                            <label class="form-check-label" for="multiplication">multiplication</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="operation" id="division" value="division"
+                                   class="form-check-input">
+                            <label class="form-check-label" for="division">division</label>
+                        </div>
+                    </fieldset>
+                    <div class="text-center pt-2 ">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
         </div>
-      {% endif %}
-  <div class="mb-3 row">
-
-    <form action="/calculator" method="POST">
-        <label for="value1" class="col-sm-2 col-form-label">Value 1:</label><br>
-        <input type="text" id="value1" name="value1" value="1"><br>
-        <label for="value2" class="col-sm-2 col-form-label">Value 2:</label><br>
-        <input type="text" id="value2" name="value2" value="2"><br>
-        <fieldset>
-        <legend>Operation</legend>
-          <div>
-            <input type="radio" name="operation" id="addition" value="addition" checked>
-            <label for="addition">addition</label>
-          </div>
-          <div>
-            <input type="radio" name="operation" id="subtraction" value="subtraction">
-            <label for="subtraction">subtraction</label>
-          </div>
-          <div>
-            <input type="radio" name="operation" id="multiplication" value="multiplication">
-            <label for="multiplication">multiplication</label>
-          </div>
-        </fieldset>
-
-        <input type="submit" value="Submit">
-    </form>
-  </div>
+    </div>
+</div>
 {% endblock %}

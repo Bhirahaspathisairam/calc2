@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/web.css') }}"/>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+    .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .para {
+        font-size: 50px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <br>
+    <h2 style="color: white"><i>Beginning of Web</i></h2>
+    <br>
+    <div class="p-5 my-4 bg-light text-dark rounded-3 info shadow-lg p-3 bg-body rounded">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-3">
+                    <img alt="tcp" class="mr-3 rounded shadow-lg" src="{{ url_for('static', filename='images/tcp.jpg') }}">
+                </div>
+                <div class="col-lg-9">
+                    <h5 class="mt-0">TCP/IP</h5>
+                    <p>The most popular network protocol in the world, TCP/IP protocol suite, was designed in 1970s by 2
+                        DARPA scientists—Vint Cerf and Bob Kahn, persons most often called the fathers of the Internet.
+                        It is named from two of the most important protocols in it: the Transmission Control Protocol
+                        (TCP) and the Internet Protocol (IP), which were the first two networking protocols defined in
+                        this standard.
+                        The Internet is a packet-switched network, in which information is broken down into small
+                        packets, sent individually over many different routes at the same time, and then reassembled at
+                        the receiving end.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 bg-dark text-white rounded-3 info shadow-lg p-3  rounded">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-3">
+                    <img alt="www" class="mr-3 rounded shadow lg" src="{{ url_for('static', filename='images/www.jpg') }}">
+                </div>
+                <div class="col-lg-9">
+                    <h5 class="mt-0">Web Development</h5>
+                    <p>In 1980 it was difficult to search the internet without the wizard and by the time internet was
+                        released to more public. At that time Tim Berners-Lee, a British scientist, invented the World
+                        Wide Web (WWW) in 1989, while working at CERN.
+                        The basic idea of the WWW was to merge the evolving technologies of computers, data networks and
+                        hypertext into a powerful and easy to use global information system.
+                        By the end of 1990, Tim Berners-Lee had the first Web server and browser up and running at CERN,
+                        demonstrating his ideas. He developed the code for his Web server on a NeXT computer.
+                        The WWW design allowed easy access to existing information and an early web page linked to
+                        information useful to CERN scientists (e.g. the CERN phone book and guides for using CERN’s
+                        central computers).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 text-dark rounded-3 shadow-lg p-3 info shadow-lg p-3 bg-body rounded ">
+        <div class="container-fluid py-2 mx-4 ">
+            <div class="row mb-4">
+                <div class="col-lg-3">
+                    <img alt="firstwebsite" class="mr-3 rounded shadow lg" src="{{ url_for('static', filename='images/firstWebsite.jpg') }}">
+                </div>
+                <div class="col-lg-9">
+                    <h5 class="mt-0">World's First Website</h5>
+                    <p>On August 6, 1991, the first website was introduced to the world.
+                        And while perhaps not as exciting or immersive as some of the nearly 1.9 billion websites that
+                        exist today, it makes sense that the first web page launched on the good ol' W3 was, well,
+                        instructions about how to use it.
+                        The first website contained information about the World Wide Web Project.
+                        It launched at the European Organization for Nuclear Research, CERN, where it was created by
+                        British computer scientist Tim Berners-Lee. On it, people could find out how to create web pages
+                        and learn about hypertext (coded words or phrases that link to content).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

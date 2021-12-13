@@ -1,0 +1,5 @@
+value_1,value_2,result,operation performed
+1,2,2.0,multiplication
+1,2,2.0,division
+5,10,15.0,addition
+45,55,100.0,addition

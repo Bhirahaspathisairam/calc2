@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}"/>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+    .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .para {
+        font-size: 50px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <br>
+    <h2 class="text-center" style="color: white">History Of Internet</h2>
+    <div class="p-5 my-4 bg-dark text-dark rounded-3 info shadow-lg p-3 bg-body rounded">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h4>Origin and Invention of Internet</h4>
+                    <p>
+                        The Internet has revolutionized the computer and communications world like nothing before.
+                        The invention of the telegraph, telephone, radio, and computer set the stage for this
+                        unprecedented integration of capabilities.
+                        The Internet is at once a world-wide broadcasting capability, a mechanism for information
+                        dissemination,
+                        and a medium for collaboration and interaction between individuals and their computers without
+                        regard for geographic location Computer scientists Vinton Cerf
+                        and Bob Kahn invented the Internet Communication protocol referred as ‘Internet’.
+                    </p>
+                    <ul>
+                        <li>
+                            The idea behind internet was first started by
+                            <mark><a href="https://www.internethalloffame.org/inductees/jcr-licklider">J.C.R.
+                                Licklider</a></mark>
+                            of MIT in August 1962.
+                        </li>
+                        <li>
+                            The idea was that set of computers through which everyone could quickly access data and
+                            programs from any site.
+                        </li>
+                        <li>
+                            Licklider was the first head of the computer research program at DARPA,4 starting in October
+                            1962.
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-3">
+                    <img alt="licklider" src="{{ url_for('static', filename='images/licklider.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 bg-light text-dark rounded-3 info shadow-lg p-3 bg-body rounded">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h4>Computer in early Period:</h4>
+
+                    <p>In early period computer was large and expensive and standalone. The computers were never
+                        communicating and it was difficult to communicate with one computer to another.
+                        Circuit switching is a method of implementing a telecommunications network in which two network
+                        nodes establish a dedicated communications channel (circuit) through the network before the
+                        nodes may communicate.
+                    </p>
+                </div>
+                <div class="col-lg-3">
+                    <img alt="pchistory" src="{{ url_for('static', filename='images/pchistory.jpg') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-5 my-4 bg-dark text-dark rounded-3 info shadow-lg p-3 bg-body rounded">
+        <div class="container-fluid py-2 mx-4">
+            <div class="row mb-4">
+                <div class="col-lg-9">
+                    <h5 class="mt-0">Arpanet</h5>
+                    <p>In late 1966 Roberts went to DARPA to develop the computer network concept and quickly put
+                        together his plan for the “ARPANET”, publishing it in 1967.
+                        This was done to solve the problem of circuit switching. In circuit switching if the circuit is
+                        cut the message is lost so inorder to prevent it from happening the new idea packet switching
+                        was discovered.
+                        In 1969, the idea became a modest reality with the interconnection of four university computers.
+                        The initial purpose was to communicate with and share computer resources among mainly scientific
+                        users at the connected institutions.
+                        ARPANET took advantage of the new idea of sending information in small units called packets that
+                        could be routed on different paths and reconstructed at their destination.</p>
+                </div>
+                <div class="col-lg-3">
+                    <img alt="arpanet" class="ml-3" src="{{ url_for('static', filename='images/Arpanet.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

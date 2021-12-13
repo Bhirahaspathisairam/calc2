@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/evolution.css') }}"/>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+    .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .para {
+        font-size: 50px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="container-fluid p-3">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">PARC</h1>
+            <p>
+                Xerox Corporation assembles a team of world-class experts in information and physical sciences to become
+                what is known as
+                ‘The Architects of Information.’ The company establishes the Xerox Palo Alto Research Centre (Xerox
+                PARC) under the direction of
+                Dr. George Pake. The charter for Xerox PARC is to create ‘The Office of the Future. ‘Pala-Alto Research
+                Centre was the one
+                which came up with mouse, keyboard, GUI etc.
+            </p>
+            <div class="text-center mb-4">
+                <img alt="yahoo" src="{{ url_for('static', filename='images/yahoo.jpg') }}" width="400px"/>
+            </div>
+            <p>
+                Steve jobs grew up in Pala-Alto. He got a tour and saw the work of which Xerox is doing and he used the
+                idea for himself.
+                Steve Wozniak the friend of Steve jobs He primarily designed the Apple II, introduced in 1977, known as
+                one of the first
+                highly successful mass-produced microcomputers.i.e personal computers like desktop and they started
+                selling a lot of
+                Apple II products.
+            </p>
+            <div class="text-center mb-4">
+                <img alt="apple" src="{{ url_for('static', filename='images/Apple_II.png') }}" width="400px"/>
+            </div>
+
+        </div>
+        <div class="row mx-4">
+            <div class="col">
+                <h3 class="display-5">
+                    IBM
+                </h3>
+                <p>
+                    IBM was selling mainframe computers at the time and the Apple II personal computers were selling
+                    more.
+                    IBM realized that personal computer is fast compared to mainframe computers and in order to nullify
+                    the dominance
+                    of Apple II share IBM thought that they should produce personal computers. IBM formed a team and
+                    they had a
+                    proposal. They decided they cannot manufacture their own devices instead they though to use generic
+                    PC,
+                    microprocessors etc in order to catch Apple in business. They developed a Bios which bridges the
+                    hardware and
+                    software. But the issue is they did not have a proper operating system. IBM sent a team to Gary
+                    kildall.
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

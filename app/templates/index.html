@@ -1,15 +1,36 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
+{{ super() }}
+<style type="text/css">
+    .important {
+        color: #336699;
+    }
+
+    .index {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .para {
+        font-size: 50px;
+    }
+</style>
 {% endblock %}
 {% block content %}
-    <h1>Index I should see this change with a page refresh</h1>
-    <p class="important">
-      Welcome to my awesome homepage.
-        <img src="{{ url_for('static', filename='images/sample.jpeg') }}">
-    </p>
+<div class="container-fluid index">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center">
+                <p class="important para">
+                    Welcome to my Calculator.
+                    <!--                <img src="{{ url_for('static', filename='images/sample.jpeg') }}">-->
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

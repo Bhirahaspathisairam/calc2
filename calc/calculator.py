@@ -26,6 +26,12 @@ class Calculator:
         """ multiplication number from result"""
         Calculations.add_multiplication_calculation_to_history(tuple_values)
         return True
+
+    @staticmethod
+    def division(tuple_values: tuple):
+        """ division number from result"""
+        Calculations.add_division_calculation_to_history(tuple_values)
+        return True
     @staticmethod
     def getHistory():
         """ Get history """

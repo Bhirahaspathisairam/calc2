@@ -1,5 +1,7 @@
 from app.controllers.controller import ControllerBase
 from calc.calculator import Calculator
+from calc.history.calculations import Calculations
+from csvmanager.read import Read
 from flask import render_template, request, flash, redirect, url_for, session
 
 
@@ -27,7 +29,12 @@ class CalculatorController(ControllerBase):
                 'operation': [operation]
             }
             Calculator.writeHistoryToCSV()
-            return render_template('result.html', data=Calculator.getHistory(), value1=value1, value2=value2, operation=operation, result=result)
+            Calculations.create_dataframe_to_write(value1, value2, result, operation)
+            df = Read.DataFrameFromCSVFile()
+            return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result,
+                                   tables=[df.to_html(classes='data')], titles=df.columns.values,
+                                   row_data=list(df.values.tolist()), zip=zip)
+            # return render_template('result.html', data=Calculator.getHistory(), value1=value1, value2=value2, operation=operation, result=result)
         return render_template('calculator.html', error=error)
     @staticmethod
     def get():
